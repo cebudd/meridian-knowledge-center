@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting up your MSL territory in Veeva | Meridian Knowledge Center</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1f1f1f; background: #fdfaf3; line-height: 1.55; }
+    .topbar { background: #E07A1F; color: white; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar .brand { font-weight: 700; font-size: 22px; letter-spacing: -0.5px; }
+    .topbar .right { display: flex; gap: 18px; font-size: 13px; opacity: 0.95; align-items: center; }
+    .avatar { background: rgba(255,255,255,0.22); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
+    .subnav { background: #0F4C5C; color: white; padding: 8px 24px; font-size: 13px; }
+    .subnav a { color: white; text-decoration: none; opacity: 0.85; margin-right: 18px; }
+    .subnav a:hover { opacity: 1; text-decoration: underline; }
+    .breadcrumb { background: white; padding: 12px 24px; border-bottom: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; }
+    .breadcrumb a { color: #2563eb; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    main { max-width: 800px; margin: 0 auto; padding: 32px 24px 60px; }
+    .article { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 36px 40px; }
+    h1 { font-size: 28px; margin: 0 0 16px; line-height: 1.25; }
+    h2 { font-size: 20px; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #e5e7eb; color: #1f1f1f; }
+    h3 { font-size: 16px; margin: 22px 0 8px; color: #0F4C5C; }
+    p, li { color: #2d2d2d; }
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 6px; }
+    a { color: #2563eb; }
+    .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: #6b7280; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; align-items: center; }
+    .tag { background: #FEF3E0; color: #B85F12; font-size: 11px; padding: 3px 8px; border-radius: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .callout { background: #FEF3E0; border-left: 4px solid #E07A1F; padding: 14px 18px; margin: 18px 0; border-radius: 4px; }
+    .callout p { margin: 0; }
+    .callout-warning { background: #fef3c7; border-left-color: #d97706; }
+    .callout-success { background: #d1fae5; border-left-color: #059669; }
+    .step { background: #FFF8EE; border: 1px solid #FBE4C2; border-radius: 6px; padding: 20px 24px; margin: 16px 0; }
+    .step-num { display: inline-block; background: #E07A1F; color: white; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 13px; margin-right: 8px; vertical-align: middle; }
+    .step h3 { margin-top: 0; color: #1f1f1f; display: inline-block; vertical-align: middle; font-size: 17px; }
+    code { background: #FEF3E0; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #B85F12; }
+    .checklist { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 18px 22px; margin: 20px 0; }
+    .checklist h3 { margin-top: 0; color: #1f1f1f; }
+    .checklist ul { list-style: none; padding-left: 4px; }
+    .checklist li::before { content: "☐ "; color: #E07A1F; font-weight: 700; margin-right: 6px; }
+    .checklist li { margin-bottom: 8px; }
+    .related { background: #FFF8EE; border: 1px solid #FBE4C2; border-radius: 6px; padding: 18px 22px; margin-top: 32px; }
+    .related h3 { margin-top: 0; }
+    .related a { display: block; padding: 6px 0; }
+    .feedback { text-align: center; margin: 36px 0 0; padding: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 13px; }
+    .feedback button { background: white; border: 1px solid #e5e7eb; padding: 6px 14px; border-radius: 4px; margin: 0 4px; font-size: 13px; cursor: pointer; }
+    footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; font-size: 12px; color: #6b7280; margin-top: 40px; }
+    footer a { color: #6b7280; margin: 0 8px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">meridian</div>
+    <div class="right">
+      <span>Knowledge Center</span>
+      <div class="avatar">SC</div>
+    </div>
+  </div>
+  <div class="subnav">
+    <a href="../../">Home</a>
+    <a href="../">Knowledge Base</a>
+    <a href="#">Field Medical</a>
+    <a href="#">Compliance</a>
+    <a href="#">HR</a>
+    <a href="#">Lumen</a>
+  </div>
+  <div class="breadcrumb">
+    <a href="../../">Home</a> &nbsp;›&nbsp; <a href="../">Knowledge Base</a> &nbsp;›&nbsp; Veeva &amp; Field Medical
+  </div>
+
+  <main>
+    <article class="article">
+      <span class="tag">Veeva · Field Medical · How-to</span>
+      <h1>Setting up your MSL territory in Veeva: KOL views, account plans, and call planning</h1>
+
+      <div class="meta">
+        <span>📄 <strong>Owner:</strong> Medical Affairs Operations</span>
+        <span>🕐 <strong>8 min read</strong></span>
+        <span>📅 <strong>Last updated:</strong> May 14, 2026</span>
+        <span>👁️ 894 views</span>
+      </div>
+
+      <h2>Overview</h2>
+      <p>This guide walks new Medical Science Liaisons through the first-week setup of their Veeva Medical CRM territory. By the end you will have logged in, validated your pre-loaded KOL stakeholder list, configured the views you'll use day-to-day, and successfully logged your first practice call.</p>
+
+      <p>Your territory has already been provisioned by the People Operations onboarding workflow. Everything below assumes your access went live on Day 1.</p>
+
+      <div class="callout">
+        <p><strong>If you don't see Veeva on your launchpad on Day 1:</strong> message <strong>@Lumen</strong> in Teams. Don't open a separate IT ticket — Lumen already has the context and will fast-track resolution.</p>
+      </div>
+
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Meridian M365 account active (you're already signed in if you can read this)</li>
+        <li>Veeva Medical CRM provisioned (check the access list in your welcome email)</li>
+        <li>Mobile device enrolled in Intune (required for iPad Veeva access in the field)</li>
+        <li>FDA Promotional Compliance Training scheduled (Day 2 — gates your independent HCP interactions)</li>
+      </ul>
+
+      <h2>Step-by-step</h2>
+
+      <div class="step">
+        <h3><span class="step-num">1</span>Accessing Veeva Medical CRM for the first time</h3>
+        <p>Open <a href="#">veeva.meridianbiopharma.com</a> and sign in with your Meridian SSO credentials. The first login will take 30–60 seconds while your territory is hydrated. You'll land on the <strong>Medical Affairs</strong> home page — not the Commercial sales page. If you see the commercial view, your role hasn't propagated yet; wait 10 minutes and refresh.</p>
+        <p>On mobile, install the <strong>Veeva CRM</strong> app from the Meridian MAM portal (not the public App Store). Authenticate with the same SSO credentials.</p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-num">2</span>Reviewing your pre-loaded KOL stakeholder list</h3>
+        <p>Your KOL list was pre-loaded by Medical Affairs Operations based on your territory assignment. To see it:</p>
+        <ol>
+          <li>Click <strong>My Accounts</strong> in the left nav.</li>
+          <li>Filter by <code>Account Type = HCP — KOL</code>.</li>
+          <li>You should see between 25 and 60 KOLs depending on territory density.</li>
+        </ol>
+        <p>For each KOL, you'll find their affiliation, specialty, publication history, prior engagement notes from your predecessor (if any), and consent status for unsolicited scientific exchange.</p>
+
+        <div class="callout-warning callout">
+          <p><strong>Spot-check before your first field interaction:</strong> if a KOL is missing or you spot a duplicate, do not edit the master record directly. Submit a correction request via the <strong>Stakeholder List Correction</strong> form in Veeva so changes are audited and propagate to Snowflake.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-num">3</span>Configuring your call planning view</h3>
+        <p>Veeva ships with a generic call planning view. Replace it with the Field Medical view your team uses:</p>
+        <ol>
+          <li>In <strong>Call Planning</strong>, click the gear icon and select <strong>Switch View</strong>.</li>
+          <li>Choose <strong>Medical Affairs — Quarterly Engagement Plan (default)</strong>.</li>
+          <li>Set your default cycle to the current quarter.</li>
+        </ol>
+        <p>This view weights KOLs by tier, surfaces upcoming congress activity, and integrates with your Outlook calendar so call scheduling becomes a single-click action.</p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-num">4</span>Logging your first call</h3>
+        <p>After every HCP interaction — in-person, virtual, or phone — you'll log a Medical Call Record. The minimum required fields are:</p>
+        <ul>
+          <li><strong>HCP:</strong> auto-filled from your call plan or searched manually</li>
+          <li><strong>Date/time:</strong> defaults to now</li>
+          <li><strong>Channel:</strong> in-person, video, phone, email</li>
+          <li><strong>Topic discussed:</strong> select from the Medical Affairs topic library (do <em>not</em> free-text)</li>
+          <li><strong>Materials shared:</strong> link to approved scientific exchange materials only</li>
+          <li><strong>Follow-up commitments:</strong> what you owe them, with a due date</li>
+        </ul>
+        <p>Calls must be logged within 24 hours per Meridian's Medical Affairs SOP. The Veeva mobile app supports voice-to-text capture — most field-experienced MSLs log on the drive back.</p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-num">5</span>Linking your account plan</h3>
+        <p>An account plan is the strategic narrative for each KOL or institution — what you're trying to learn, what scientific exchange is on the table, and what their evolving informational needs look like. Your manager will work through your top-tier accounts with you in your Week-2 1:1.</p>
+        <p>For now, just confirm each Tier-1 KOL has a draft account plan attached. If any are missing, flag them in your Day-5 readiness check with Daniel.</p>
+      </div>
+
+      <div class="checklist">
+        <h3>Before your first field call</h3>
+        <ul>
+          <li>Veeva login confirmed on desktop AND mobile</li>
+          <li>KOL stakeholder list reviewed end-to-end</li>
+          <li>Call planning view switched to Medical Affairs default</li>
+          <li>Practice call logged (use the sandbox HCP record)</li>
+          <li>FDA Promotional Compliance Training complete</li>
+          <li>Account plans drafted for all Tier-1 KOLs</li>
+        </ul>
+      </div>
+
+      <div class="callout callout-success">
+        <p><strong>You're ready when:</strong> you can find a KOL, open their record, schedule a call from the call plan, and log the interaction afterward without consulting this guide.</p>
+      </div>
+
+      <div class="related">
+        <h3>Related articles</h3>
+        <a href="../scientific-exchange-vs-promotional/">Scientific Exchange vs. Promotional: a field guide for new MSLs</a>
+        <a href="#">Logging your call: what compliance is actually looking for</a>
+        <a href="#">Veeva on iPad — offline mode for the field</a>
+        <a href="#">Submitting a KOL stakeholder correction</a>
+        <a href="#">Quarterly Engagement Plan: how the algorithm tiers your KOLs</a>
+      </div>
+
+      <div class="feedback">
+        Was this article helpful?
+        <button type="button">👍 Yes</button>
+        <button type="button">👎 No</button>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2026 Meridian Biopharma. For internal use only.
+    <br>
+    <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Ask Lumen</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Medical New Hire Handbook | Meridian Knowledge Center</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1f1f1f; background: #fdfaf3; line-height: 1.6; }
+    .topbar { background: #E07A1F; color: white; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar .brand { font-weight: 700; font-size: 22px; letter-spacing: -0.5px; }
+    .topbar .right { display: flex; gap: 18px; font-size: 13px; opacity: 0.95; align-items: center; }
+    .avatar { background: rgba(255,255,255,0.22); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
+    .subnav { background: #0F4C5C; color: white; padding: 8px 24px; font-size: 13px; }
+    .subnav a { color: white; text-decoration: none; opacity: 0.85; margin-right: 18px; }
+    .breadcrumb { background: white; padding: 12px 24px; border-bottom: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; }
+    .breadcrumb a { color: #2563eb; text-decoration: none; }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 24px 60px; }
+    .article { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 36px 44px; }
+    h1 { font-size: 32px; margin: 0 0 8px; color: #1f1f1f; }
+    .subtitle { color: #6b7280; font-size: 15px; margin-bottom: 28px; }
+    h2 { font-size: 20px; margin: 36px 0 12px; color: #0F4C5C; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; }
+    h3 { font-size: 16px; margin: 22px 0 6px; }
+    p { color: #2d2d2d; }
+    blockquote { border-left: 3px solid #FBE4C2; background: #FFF8EE; padding: 16px 22px; margin: 24px 0; font-style: italic; color: #5a4528; }
+
+    /* TOC */
+    .toc { background: #FFF8EE; border: 1px solid #FBE4C2; border-radius: 6px; padding: 18px 22px; margin: 24px 0; }
+    .toc h3 { margin: 0 0 10px; color: #0F4C5C; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { margin-bottom: 4px; }
+    .toc a { text-decoration: none; color: #2563eb; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* Org chart */
+    .org { display: flex; flex-direction: column; align-items: center; margin: 28px 0; gap: 12px; }
+    .org-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .org-box { background: white; border: 1px solid #FBE4C2; border-radius: 6px; padding: 12px 16px; text-align: center; font-size: 13px; min-width: 140px; }
+    .org-box .role { color: #0F4C5C; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; }
+    .org-box .name { color: #1f1f1f; font-weight: 600; margin-top: 2px; }
+    .org-box .area { color: #6b7280; font-size: 12px; margin-top: 2px; }
+    .org-arrow { color: #E07A1F; font-size: 20px; }
+    .org-box.you { background: #FEF3E0; border-color: #E07A1F; border-width: 2px; }
+
+    /* Timeline 30/60/90 */
+    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0; }
+    .timeline-card { background: white; border: 1px solid #e5e7eb; border-radius: 6px; padding: 18px; }
+    .timeline-card h4 { color: #B85F12; margin: 0 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .timeline-card ul { margin: 0; padding-left: 18px; font-size: 13px; }
+    .timeline-card li { margin-bottom: 6px; color: #2d2d2d; }
+    @media (max-width: 700px) { .timeline { grid-template-columns: 1fr; } }
+
+    /* Tools grid */
+    .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0; }
+    .tool { background: #FFF8EE; border: 1px solid #FBE4C2; border-radius: 6px; padding: 14px 16px; }
+    .tool .name { color: #0F4C5C; font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+    .tool .what { font-size: 13px; color: #5a4528; }
+
+    /* FAQ */
+    details { background: #FFF8EE; border: 1px solid #FBE4C2; border-radius: 6px; padding: 14px 18px; margin: 8px 0; }
+    summary { cursor: pointer; font-weight: 600; color: #1f1f1f; padding: 2px 0; }
+    summary:hover { color: #0F4C5C; }
+    details[open] summary { color: #0F4C5C; margin-bottom: 8px; }
+    details p { font-size: 14px; margin: 6px 0 0; }
+
+    .callout { background: #FEF3E0; border-left: 4px solid #E07A1F; padding: 14px 18px; margin: 18px 0; border-radius: 4px; }
+    .callout p { margin: 0; }
+
+    footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; font-size: 12px; color: #6b7280; margin-top: 40px; }
+    footer a { color: #6b7280; margin: 0 8px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">meridian</div>
+    <div class="right">
+      <span>Knowledge Center</span>
+      <div class="avatar">SC</div>
+    </div>
+  </div>
+  <div class="subnav">
+    <a href="../">Home</a>
+    <a href="../kb/">Knowledge Base</a>
+    <a href="#">Field Medical</a>
+    <a href="#">Compliance</a>
+    <a href="#">HR</a>
+    <a href="#">Lumen</a>
+  </div>
+  <div class="breadcrumb">
+    <a href="../">Home</a> &nbsp;›&nbsp; Handbooks &nbsp;›&nbsp; Field Medical
+  </div>
+
+  <main>
+    <article class="article">
+      <h1>Field Medical New Hire Handbook</h1>
+      <p class="subtitle">For Medical Science Liaisons joining Meridian US Medical Affairs.<br>Edition 2026.1 · Last updated May 2026</p>
+
+      <blockquote>
+        <p>Welcome to Field Medical. You're joining one of the most rewarding — and most carefully governed — roles in our industry. The next 90 days will move quickly. This handbook is here to keep your bearings when they do.</p>
+        <p>— US Medical Affairs Leadership</p>
+      </blockquote>
+
+      <div class="toc">
+        <h3>In this handbook</h3>
+        <ol>
+          <li><a href="#about">About this role</a></li>
+          <li><a href="#org">Who's who in Field Medical</a></li>
+          <li><a href="#timeline">Your first 30 / 60 / 90 days</a></li>
+          <li><a href="#tools">Tools you'll use every day</a></li>
+          <li><a href="#travel">Travel &amp; expense</a></li>
+          <li><a href="#career">Career development</a></li>
+          <li><a href="#faq">Frequently asked questions</a></li>
+        </ol>
+      </div>
+
+      <h2 id="about">About this role</h2>
+      <p>As a Medical Science Liaison, you are Meridian's scientific face in the field. You build peer relationships with key opinion leaders, you respond to unsolicited scientific inquiries, you gather insights that inform our medical strategy, and you advance Meridian's reputation as a science-driven partner to the medical community.</p>
+      <p>You do not promote. You do not sell. You report to Medical Affairs leadership, and your incentive structure is decoupled from prescribing volume by design. This separation is what gives our scientific exchange credibility — protect it.</p>
+
+      <h2 id="org">Who's who in Field Medical</h2>
+      <p>Your immediate reporting chain and the broader Field Medical organization:</p>
+
+      <div class="org">
+        <div class="org-row">
+          <div class="org-box">
+            <div class="role">Head of US Medical Affairs</div>
+            <div class="name">Dr. Robert Chen</div>
+          </div>
+        </div>
+        <div class="org-arrow">↓</div>
+        <div class="org-row">
+          <div class="org-box">
+            <div class="role">VP, Field Medical — Specialty Care</div>
+            <div class="name">Dr. Eva Vogel</div>
+            <div class="area">Oncology / Immunology / Rare Disease</div>
+          </div>
+        </div>
+        <div class="org-arrow">↓</div>
+        <div class="org-row">
+          <div class="org-box">
+            <div class="role">Regional Medical Director — NE</div>
+            <div class="name">Daniel Reyes</div>
+            <div class="area">Your hiring manager</div>
+          </div>
+          <div class="org-box">
+            <div class="role">Regional Medical Director — SE</div>
+            <div class="name">Dr. Marcus Aldridge</div>
+          </div>
+          <div class="org-box">
+            <div class="role">Regional Medical Director — West</div>
+            <div class="name">Dr. Priya Raman</div>
+          </div>
+        </div>
+        <div class="org-arrow">↓</div>
+        <div class="org-row">
+          <div class="org-box you">
+            <div class="role">MSL — Oncology</div>
+            <div class="name">You</div>
+            <div class="area">Northeast Territory</div>
+          </div>
+          <div class="org-box">
+            <div class="role">Senior MSL — Oncology</div>
+            <div class="name">Dr. Marcus Thorne</div>
+            <div class="area">NE · Your field mentor</div>
+          </div>
+        </div>
+      </div>
+
+      <p>You'll also work closely with cross-functional partners in Medical Information, Medical Affairs Operations, Compliance, and your Sales counterparts in the Specialty Care commercial team.</p>
+
+      <h2 id="timeline">Your first 30 / 60 / 90 days</h2>
+
+      <div class="timeline">
+        <div class="timeline-card">
+          <h4>First 30 days</h4>
+          <ul>
+            <li>Complete FDA Promotional Compliance Training</li>
+            <li>Complete Oncology TA Certification</li>
+            <li>Veeva &amp; Meridian Medical Portal setup</li>
+            <li>Shadow Dr. Thorne on 3+ field calls</li>
+            <li>Review KOL list with Daniel</li>
+            <li>Draft account plans for Tier-1 KOLs</li>
+            <li>Acknowledge Code of Conduct</li>
+            <li>Attend Medical Affairs all-hands</li>
+          </ul>
+        </div>
+        <div class="timeline-card">
+          <h4>Days 31–60</h4>
+          <ul>
+            <li>Begin independent KOL engagement</li>
+            <li>Log 10+ scientific exchange interactions</li>
+            <li>Attend at least one regional congress</li>
+            <li>Co-lead one MSL-to-MSL knowledge share</li>
+            <li>Mid-quarter check-in with Daniel</li>
+            <li>Complete advanced Veeva training</li>
+            <li>Insights submission for Q3 strategy review</li>
+          </ul>
+        </div>
+        <div class="timeline-card">
+          <h4>Days 61–90</h4>
+          <ul>
+            <li>Full Tier-1 KOL coverage</li>
+            <li>First contribution to a Medical Affairs publication or congress activity</li>
+            <li>Build engagement plan for Q4</li>
+            <li>90-day performance check-in with Daniel</li>
+            <li>Identify a development goal for next 6 months</li>
+            <li>Volunteer for one cross-TA project</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="tools">Tools you'll use every day</h2>
+
+      <div class="tools">
+        <div class="tool">
+          <div class="name">Veeva Medical CRM</div>
+          <div class="what">Call planning, KOL records, call logging</div>
+        </div>
+        <div class="tool">
+          <div class="name">Meridian Medical Portal</div>
+          <div class="what">Approved scientific exchange materials</div>
+        </div>
+        <div class="tool">
+          <div class="name">Medical Affairs LMS</div>
+          <div class="what">Required training and TA certifications</div>
+        </div>
+        <div class="tool">
+          <div class="name">M365 (Teams, Outlook, OneDrive)</div>
+          <div class="what">Day-to-day communication and collaboration</div>
+        </div>
+        <div class="tool">
+          <div class="name">Helio</div>
+          <div class="what">Pre-call AI briefings; rapid call logging</div>
+        </div>
+        <div class="tool">
+          <div class="name">SharePoint — Field Medical NE</div>
+          <div class="what">Regional team collaboration workspace</div>
+        </div>
+        <div class="tool">
+          <div class="name">Lumen</div>
+          <div class="what">First-line support for IT, HR, and policy questions</div>
+        </div>
+        <div class="tool">
+          <div class="name">Concur</div>
+          <div class="what">Travel booking and expense reporting</div>
+        </div>
+      </div>
+
+      <h2 id="travel">Travel &amp; expense</h2>
+      <p>MSL territories require regular travel. Your role assumes roughly 50% time in the field, depending on territory geography and KOL distribution.</p>
+      <h3>Travel booking</h3>
+      <p>All Meridian travel is booked through Concur. Domestic flights default to economy class for flights under 6 hours. Hotels are booked at the Meridian-preferred rate; the property list is in Concur.</p>
+      <h3>Per diem &amp; meals</h3>
+      <p>Per diem rates follow GSA guidelines for the destination city. Meals with HCPs are governed by separate limits and documentation requirements — see the <a href="#">HCP Interactions Policy</a>.</p>
+      <h3>Expense submission</h3>
+      <p>Expenses must be submitted within 30 days of incurring them. Late submissions delay reimbursement and create audit findings.</p>
+
+      <div class="callout">
+        <p><strong>Field equipment:</strong> Your iPad, MiFi hotspot, and badge printer will be shipped to your home address before Day 1. If anything is missing on your first day, message @Lumen in Teams.</p>
+      </div>
+
+      <h2 id="career">Career development</h2>
+      <p>Field Medical at Meridian is a recognized career path, not a stepping stone. The typical progression:</p>
+      <ul>
+        <li><strong>MSL</strong> — your role on hire</li>
+        <li><strong>Senior MSL</strong> — typically 3+ years, with demonstrated KOL leadership and cross-territory influence</li>
+        <li><strong>Lead MSL / Field Trainer</strong> — mentoring new hires and contributing to MSL curriculum</li>
+        <li><strong>Regional Medical Director</strong> — managing an MSL team (Daniel's path)</li>
+        <li><strong>VP, Field Medical</strong> — TA-level leadership</li>
+      </ul>
+      <p>Lateral moves into Global Medical Affairs, Medical Information, or Clinical Development are encouraged and common.</p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <details>
+        <summary>What if I don't have all my access on Day 1?</summary>
+        <p>Lumen tracks every access request in real time. The vast majority of new hires are fully provisioned by Day 1. If something is missing, message @Lumen in Teams and they'll resolve it before you can open a separate IT ticket.</p>
+      </details>
+
+      <details>
+        <summary>Can I co-promote with my Sales counterpart?</summary>
+        <p>No. MSLs do not promote. You can attend a joint visit at an HCP's request, but your scientific exchange must be clearly separated from the Sales rep's promotional content. See <a href="../kb/scientific-exchange-vs-promotional/">Scientific Exchange vs. Promotional</a>.</p>
+      </details>
+
+      <details>
+        <summary>What's my call quota?</summary>
+        <p>Field Medical does not operate on a call quota. We measure engagement quality, KOL coverage, insight generation, and TA expertise. Your Regional Medical Director will work with you on goals that fit your territory.</p>
+      </details>
+
+      <details>
+        <summary>How do I handle an off-label question?</summary>
+        <p>Pause the conversation, capture the question verbatim, and respond per Meridian's unsolicited request SOP (typically a follow-up within 5 business days with approved scientific information). See <a href="../kb/scientific-exchange-vs-promotional/">the field guide</a>.</p>
+      </details>
+
+      <details>
+        <summary>Who do I talk to about a compliance concern?</summary>
+        <p>Several options: your manager, your HR Business Partner, the Medical Affairs Compliance helpdesk, or the anonymous Meridian Voice line. See the <a href="../code-of-conduct/">Code of Conduct</a>.</p>
+      </details>
+
+      <details>
+        <summary>What if I want to publish or present at a congress?</summary>
+        <p>External publication and presentation activity goes through the Medical Affairs Publications team. Submit your concept via the Publication Planning portal. Authorship and disclosure rules apply.</p>
+      </details>
+
+      <details>
+        <summary>How does my performance review work?</summary>
+        <p>Annual cycle with quarterly check-ins. Your performance signals are pulled automatically from Veeva (engagement metrics), the LMS (training completion), and feedback from your Regional Medical Director and KOL relationships. Lumen will surface a draft self-assessment for you to refine.</p>
+      </details>
+
+      <p style="margin-top: 36px; color: #6b7280; font-size: 13px;">Questions about this handbook? Email <a href="mailto:medaffairs.onboarding@meridianbiopharma.com">medaffairs.onboarding@meridianbiopharma.com</a> or message @Lumen in Teams.</p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2026 Meridian Biopharma. For internal use only.
+    <br>
+    <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Ask Lumen</a>
+  </footer>
+</body>
+</html>
